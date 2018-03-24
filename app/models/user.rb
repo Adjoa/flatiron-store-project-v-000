@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :carts
+  # has_one :current_cart, class_name: "Cart", foreign_key: 'id'
+
 end
