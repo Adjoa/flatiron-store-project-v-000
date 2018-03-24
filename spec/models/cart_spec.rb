@@ -27,6 +27,7 @@ RSpec.describe Cart, :type => :model do
     it 'creates a new unsaved line_item for new item' do
       second_item = Item.second
       second_line_item = @cart.add_item(second_item.id)
+      # binding.pry
       expect(second_line_item.new_record?).to be_truthy
     end
 
