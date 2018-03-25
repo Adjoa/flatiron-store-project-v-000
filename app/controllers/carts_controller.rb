@@ -12,6 +12,7 @@ class CartsController < ApplicationController
         current_user.current_cart_id = nil
         current_user.save
         cart = Cart.find(params[:id])
+        cart.update(:status => "submitted")
 
 
         redirect_to cart_path(cart)
