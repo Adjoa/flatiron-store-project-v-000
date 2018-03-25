@@ -3,6 +3,7 @@
         <li class="nav-item"> <%= link_to "Store Home", store_path %> </li>
         <%= display_sign_in %>
         <%= display_signup %>
+        <%= display_whoami %>
         <% if !!@cart %>
           <li class="nav-item"> <%= link_to "Cart", cart_path(current_cart) %></li>
         <% end %>
