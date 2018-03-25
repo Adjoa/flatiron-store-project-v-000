@@ -10,13 +10,11 @@ class User < ActiveRecord::Base
   
   # current_user.current_cart = Cart.create.line_items.build(item_id: 1)
   def current_cart=(current_cart)# <- This may work
-    # self.carts.build(current_cart)
     self.carts << current_cart
   end
   
   def current_cart #<- This may also work
     Cart.find_by(:user_id => self.id, :status => nil)
-    # Cart.where("status != ?", "submitted")
   end
 
 end
