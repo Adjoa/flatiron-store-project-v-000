@@ -22,5 +22,9 @@ module ApplicationHelper
       link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'navbar-link'
     end
   end
+
+  def current_cart
+    current_user.current_cart
+  end
 end
 
