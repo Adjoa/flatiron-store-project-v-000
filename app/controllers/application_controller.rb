@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
       store_path
     end
   end
+
+  def current_cart
+    current_user.current_cart
+  end
 end
