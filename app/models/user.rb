@@ -16,6 +16,13 @@ class User < ActiveRecord::Base
   #   Cart.where("status != ?", "submitted")
   # end
 
-  belongs_to :current_cart, class_name: 'Cart', foreign_key: 'cart_id'
+  belongs_to :current_cart, class_name: 'Cart', foreign_key: 'current_cart_id'
+
+  def create_current_cart
+    cart = Cart.create
+    self.current_cart_id = cart.id
+    cart.save
+    cart 
+  end
 
 end
