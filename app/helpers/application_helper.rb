@@ -26,5 +26,9 @@ module ApplicationHelper
   def current_cart
     Cart.find(current_user.current_cart_id)
   end
+
+  def formatted_value(amount)
+    number_to_currency(amount.to_f/100)
+  end
 end
 
